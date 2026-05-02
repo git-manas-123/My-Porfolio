@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manas Ranjan Sahu | DevOps Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+
+/* BACKGROUND */
+body{
+  color:#e2e8f0;
+  background: linear-gradient(-45deg,#0f172a,#1e293b,#020617,#0ea5e9);
+  background-size:400% 400%;
+  animation:gradientMove 10s ease infinite;
+  padding-top:80px;
+}
+
+@keyframes gradientMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* HEADER */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 60px;
+  background:#1e293b;
+  position:fixed;
+  width:100%;
+  top:0;
+  z-index:1000;
+  transition:transform 0.3s ease;
+}
+
+.header-hide{
+  transform:translateY(-100%);
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:#38bdf8;
+  font-size:20px;
+  font-weight:600;
+}
+.logo img{width:50px}
+
+nav a{
+  margin-left:25px;
+  text-decoration:none;
+  color:#38bdf8;
+  position:relative;
+}
+
+nav a::after{
+  content:"";
+  position:absolute;
+  width:0;height:2px;
+  background:#38bdf8;
+  left:0;bottom:-4px;
+  transition:.3s;
+}
+nav a:hover::after{width:100%}
+
+/* HERO */
+.hero{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  padding:80px 50px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.hero-text{max-width:550px}
+.hero-text h1{font-size:48px}
+
+.typing{color:#38bdf8;margin-top:5px}
+
+.bio{
+  margin-top:15px;
+  color:#cbd5f5;
+  line-height:1.6;
+}
+
+.hero-buttons{margin-top:20px}
+
+.profile{
+  width:340px;
+  aspect-ratio:3/4;
+  object-fit:cover;
+  border-radius:14px;
+  border:3px solid #38bdf8;
+  animation:zoomIn 1.2s ease forwards;
+  transform:scale(.85);
+  opacity:0;
+  transition:transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.profile:hover{
+  transform:scale(1.06);
+  box-shadow:0 12px 30px rgba(0,0,0,0.6);
+}
+
+@keyframes zoomIn{
+  to{transform:scale(1);opacity:1}
+}
+
+/* SECTIONS */
+section{max-width:1100px;margin:auto;padding:50px 20px}
+h2{color:#38bdf8;margin-bottom:20px}
+
+.card{
+  background:#1e293b;
+  padding:20px;
+  border-radius:12px;
+  margin-bottom:20px;
+}
+
+.card ul{
+  margin-top:10px;
+  padding-left:20px;
+  line-height:1.8;
+}
+
+/* SKILLS GRID */
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:15px;
+}
+
+.skill-box{
+  background:#38bdf8;
+  color:#000;
+  padding:12px;
+  border-radius:10px;
+  text-align:center;
+  font-size:14px;
+  font-weight:500;
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-box:hover{
+  transform:translateY(-3px);
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* BUTTON */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:10px 18px;
+  background:#38bdf8;
+  color:#000;
+  border-radius:6px;
+  text-decoration:none;
+  margin-right:10px;
+}
+
+/* CONTACT */
+.contact-buttons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+/* FOOTER */
+.footer{
+  background:#1e293b;
+  padding:30px 20px;
+}
+
+.footer-top{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+/* clean centered container */
+.footer-container{
+  max-width:900px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:20px;
+}
+
+.footer-left{
+  flex:1;
+}
+
+.footer-left h3{
+  color:#38bdf8;
+  margin-bottom:8px;
+}
+
+.footer-left p{
+  color:#cbd5f5;
+  font-size:14px;
+}
+
+.footer-right{
+  flex:1;
+  text-align:right;
+}
+
+.footer-right h3{
+  color:#38bdf8;
+  margin-bottom:8px;
+}
+
+.footer-right a{
+  color:#e2e8f0;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.footer-right a:hover{
+  color:#38bdf8;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero{flex-direction:column;text-align:center}
+  .footer-container{
+    flex-direction:column;
+    text-align:center;
+  }
+  .footer-right{
+    text-align:center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <img src="devops.png">
+    <span>Manas.Dev</span>
+  </div>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#certification">Certification</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-text">
+    <h1>Hi, I'm Manas.</h1>
+    <div class="typing" id="typing"></div>
+
+    <p class="bio">
+      Aspiring DevOps Engineer focused on AWS, Docker, Kubernetes & automation.
+    </p>
+
+    <div class="hero-buttons">
+      <a class="btn" href="https://drive.google.com/file/d/1tUxyD5L1SlCl8lSAP5ujUw9newf6H6X0/view?usp=sharing"><i class="fas fa-download"></i> Resume</a>
+      <a class="btn" href="#contact"><i class="fas fa-user"></i> Hire Me</a>
+    </div>
+  </div>
+
+  <img class="profile" src="profile.jpg">
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About</h2>
+  <div class="card">
+    Aspiring Cloud Engineer with hands-on experience in AWS, Docker, Kubernetes, Linux, and automation tools.
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="card">
+    <h3>CI/CD Pipeline using Docker & AWS</h3>
+    <ul>
+      <li>Built CI/CD pipeline using GitHub Actions</li>
+      <li>Containerized app using Docker</li>
+      <li>Deployed on AWS EC2</li>
+      <li>Automated workflow</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Scalable Deployment with Monitoring</h3>
+    <ul>
+      <li>Deployed Docker app to EC2</li>
+      <li>Configured scaling</li>
+      <li>Used Prometheus</li>
+      <li>Created Grafana dashboards</li>
+    </ul>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <h2>Internships</h2>
+
+  <div class="card">
+    <h3>DevOps Intern – Prodevans</h3>
+    <ul>
+      <li>Managed Linux servers</li>
+      <li>Worked on CI/CD</li>
+      <li>Used Ansible</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Data Analytics Intern – Udemy</h3>
+    <ul>
+      <li>Data analysis</li>
+      <li>Trend identification</li>
+      <li>Report creation</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="card skills-grid">
+    <div class="skill-box">AWS</div>
+    <div class="skill-box">Docker</div>
+    <div class="skill-box">Kubernetes</div>
+    <div class="skill-box">Linux</div>
+    <div class="skill-box">Ansible</div>
+    <div class="skill-box">CI/CD</div>
+    <div class="skill-box">Git</div>
+    <div class="skill-box">GitHub Actions</div>
+    <div class="skill-box">Prometheus</div>
+    <div class="skill-box">Grafana</div>
+  </div>
+</section>
+
+<!-- CERTIFICATION -->
+<section id="certification">
+  <h2>Certification</h2>
+  <div class="card">
+    <h3>RHCSA</h3>
+    <ul>
+      <li>Credential ID: 250-093-473</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card contact-buttons">
+    <a class="btn" href="mailto:manasranjansahu119@gmail.com"><i class="fas fa-envelope"></i>Email</a>
+    <a class="btn" href="tel:+917854994119"><i class="fas fa-phone"></i>Call</a>
+    <a class="btn" href="https://github.com/git-manas-123" target="_blank"><i class="fab fa-github"></i>GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/manas-ranjan-sahu-525145294/" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p class="footer-top">© 2026 Manas Ranjan Sahu</p>
+
+  <div class="footer-container">
+    <div class="footer-left">
+      <h3>Manas Ranjan Sahu</h3>
+      <p>Aspiring DevOps Engineer focused on AWS, Docker, Kubernetes & automation.</p>
+    </div>
+
+    <div class="footer-right">
+      <h3>Contact</h3>
+      <p><a href="mailto:manasranjansahu119@gmail.com">📧 manasranjansahu119@gmail.com</a></p>
+      <p><a href="tel:+917854994119">📞 +91 7854994119</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* typing */
+const texts=["Aspiring DevOps Engineer","System Admin Enthusiast","Cloud Learner"];
+let i=0,j=0,current="",isDeleting=false;
+function type(){
+  current=texts[i];
+  if(!isDeleting){
+    document.getElementById("typing").textContent=current.substring(0,j++);
+    if(j>current.length){isDeleting=true;setTimeout(type,1000);return;}
+  }else{
+    document.getElementById("typing").textContent=current.substring(0,j--);
+    if(j==0){isDeleting=false;i=(i+1)%texts.length;}
+  }
+  setTimeout(type,isDeleting?50:100);
+}
+type();
+
+/* header hide/show */
+let lastScroll=0;
+const header=document.querySelector("header");
+
+window.addEventListener("scroll",()=>{
+  let currentScroll=window.pageYOffset;
+
+  if(currentScroll > lastScroll){
+    header.classList.add("header-hide");
+  }else{
+    header.classList.remove("header-hide");
+  }
+
+  lastScroll=currentScroll;
+});
+</script>
+
+</body>
+</html>
